@@ -1,0 +1,33 @@
+Short Description:
+    This program is an experiment in using layered simplex noise to generate floating island meshes. The current version allows the user to specify the
+seed, scale, and influence of three layers of noise on a final mesh, as well as the max height, falloff of height in relation to distance from center of island,
+cutoff height for edges of mesh, and whether the mesh is rendered as flat shaded or wireframe.
+Thumbnail
+
+
+How to use:
+    Camera Controls:
+            Left click and drag to orbit 
+            Scroll wheel to zoom 
+            Right click and drag to translate
+
+    Noise parameters:
+            Seed - A random string that works as the seed for the given noise layer.
+            Zoom - How concentrated the detail of noise on the given layer is.
+            Influence - How prominent the given noise layer is in the final height of the mesh.
+    
+    Height parameters:
+            Top Height - The maximum height of any point on the island.
+            Height Falloff - Exponent value of how quickly the height diminishes in relation to distance from center.
+            Cutoff - Proximity to zero height that removes a vertex in order to create island shape.
+    
+    Wireframe: Whether mesh is drawn as flat shading solid or wireframe.
+
+    Friends: Friends :)
+             (migrated over and cleaned up particle effect from one of my previous projects, replicates the flocking behavior in the game this demo's logic
+              will be used for)
+
+
+Credits:
+    Three.js               - https://threejs.org/
+    Simplex noise library  - https://github.com/blindman67/SimplexNoiseJS
