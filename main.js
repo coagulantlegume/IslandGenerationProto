@@ -47,7 +47,7 @@ function main()
 	loadCount = 0;
 	loader = new THREE.FileLoader();
 
-	loader.load('IslandGenProto/shaders/vertexShader.vert',
+	loader.load('./IslandGenProto/shaders/vertexShader.vert',
 		function (data) 
 		{
 			console.log(data);
@@ -57,7 +57,7 @@ function main()
 		function (xhr) { console.log((xhr.loaded/xhr.total * 100)+ '% loaded'); },
 		function (err) { console.error('An error happened');});
 
-	loader.load('IslandGenProto/shaders/fragmentShader.frag',
+	loader.load('./IslandGenProto/shaders/fragmentShader.frag',
 		function (data) 
 		{
 			console.log(data);
