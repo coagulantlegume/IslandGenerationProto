@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Alec Wolf | Procedural Island Mesh Prototype</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+
+		<!-- Load external libs-->
+		<script src="/three.js-master/build/three.js"></script>
+		<script src="/three.js-master/examples/js/controls/OrbitControls.js"></script>
+		<script src="/SimplexNoiseJS-master/simplexNoise.js"></script>
+
+		<!--- Load internal libs -->
+		<script src="/models/island.js"></script>
+		<script src="/particles.js"></script>
+
+		<!-- Load main -->
+		<script src="/main.js"></script>
+
+	</head>
+	<body onload="main();">
+        Seed1:
+        <input type="text" id="seed1" value="598564" onchange="island.ChangeSeed(1);island.RecalcGeometry();">
+		&emsp;Zoom1:
+        <input type="range" min="0.01" max="25.0" step="any" class="slider" id="seedZoom1" value="7.388" oninput="island.ChangeZoom(1);island.RecalcGeometry();">
+		&emsp;Influence1:
+        <input type="range" min="0" max="1.0" step="any" class="slider" id="seedScale1" value="0.626" oninput="island.ChangeScale(1);island.RecalcGeometry();">
+		&emsp;&emsp;&emsp;&emsp;Wireframe: 
+		<input type="checkbox" id="wireframe" onclick="island.SetWireframe()">
+		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Cutoff: 
+		<input type="range" min="0" max="1.0" step="any" class="slider" id="cutoff" value="0.181" oninput="island.ChangeCutoff();island.RecalcGeometry();">
+		<br></br>
+		Seed2:
+        <input type="text" id="seed2" value="875945" onchange="island.ChangeSeed(2);island.RecalcGeometry();">
+		&emsp;Zoom2:
+        <input type="range" min="0.01" max="25.0" step="any" class="slider" id="seedZoom2" value="2.965" oninput="island.ChangeZoom(2);island.RecalcGeometry();">
+		&emsp;Influence2:
+        <input type="range" min="0" max="1.0" step="any" class="slider" id="seedScale2" value="0.123" oninput="island.ChangeScale(2);island.RecalcGeometry();">
+		&emsp;&emsp;&emsp;&emsp;Top Height:
+		&emsp;<input type="range" min="0" max="50.0" step="any" class="slider" id="maxHeightTop" value="20.0" oninput="island.ChangeTopHeight();">
+		&emsp;Friends:
+		<input type="checkbox" id="friends" onclick="friends()">
+		<br></br>
+		Seed3:
+        <input type="text" id="seed3" value="237452" onchange="island.ChangeSeed(3);island.RecalcGeometry();">
+		&emsp;Zoom3:
+        <input type="range" min="0.01" max="25.0" step="any" class="slider" id="seedZoom3" value="1.022" oninput="island.ChangeZoom(3);island.RecalcGeometry();">
+		&emsp;Influence3:
+        <input type="range" min="0" max="1.0" step="any" class="slider" id="seedScale3" value="0.0098" oninput="island.ChangeScale(3);island.RecalcGeometry();">
+		&emsp;&emsp;&emsp;&emsp;Height Falloff:
+		<input type="range" min="0.8" max="10.0" step="any" class="slider" id="falloff" value="1.196" oninput="island.ChangeFalloff();">
+		<canvas id="islandDemoCanvas" myattr="myattr" style="width: 100%; height: 100%; margin: auto;"></canvas>
+	</body>
+</html>
